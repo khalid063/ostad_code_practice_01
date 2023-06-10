@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
       title: "My App",
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My App'),
+          title: Text('Ostad PreRecorded Video Practice'),
         ),
       ),
     );
