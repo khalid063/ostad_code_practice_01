@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'Fragment/HomeFragment.dart';
+import 'Fragment/SearchFragment.dart';
+import 'Fragment/SettingsFragment.dart';
+
+
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -47,17 +54,17 @@ class _HomeActivityState extends State<HomeActivity> {
   _myAlertDiolog(context) {
     return showDialog(
         context: context,
-        builder: (BuildContext context){
+        builder: (BuildContext context) {
           return Expanded(
               child: AlertDialog(
                 title: Text("Alart !"),
                 content: Text("Do you want to delete"),
                 actions: [
-                  TextButton(onPressed: (){
+                  TextButton(onPressed: () {
                     _mySnackBar("Delete Succes", context);
                     Navigator.of(context).pop();
                   }, child: Text("Yes")),
-                  TextButton(onPressed: (){
+                  TextButton(onPressed: () {
                     Navigator.of(context).pop();
                   }, child: Text("No"))
                 ],
@@ -66,6 +73,8 @@ class _HomeActivityState extends State<HomeActivity> {
         }
     );
   }
+
+
 
 
   /// Scaffold Start
@@ -82,27 +91,41 @@ class _HomeActivityState extends State<HomeActivity> {
         )
     );
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My AppBar'),
-        titleSpacing: 0,
-        toolbarHeight: 40,
+    /// Button style 2
+    ButtonStyle elevButtonStyle2 = ElevatedButton.styleFrom(
+        minimumSize: Size(double.infinity, 60)
+    );
 
-        /// Default height 60
-        toolbarOpacity: 0.9,
-        elevation: 30,
-        backgroundColor: Colors.deepPurple,
-        actions: [
-          IconButton(onPressed: () {
-            print("button 1 is clicked");
-          }, icon: Icon(Icons.comment)),
-        ],
-      ),
-      body: Center(
-        child: ElevatedButton(onPressed: () {
-          _myAlertDiolog(context);
-        }, child: Text("Click me"), style: elevButtonStyle),
-      ),
+    /// Scaffold Start
+    return DefaultTabController(
+        length: 10,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('My App'),
+            bottom: TabBar(
+              isScrollable: true,
+              tabs: [
+                Tab(icon: Icon(Icons.home),text: 'Home',),
+                Tab(icon: Icon(Icons.search),text: 'search',),
+                Tab(icon: Icon(Icons.settings),text: 'settings',),
+                Tab(icon: Icon(Icons.email),text: 'Home',),
+                Tab(icon: Icon(Icons.contact_mail_outlined),text: 'Home',),
+                Tab(icon: Icon(Icons.person),text: 'Home',),
+                Tab(icon: Icon(Icons.favorite),text: 'Home',),
+                Tab(icon: Icon(Icons.cabin),text: 'Home',),
+                Tab(icon: Icon(Icons.safety_check),text: 'Home',),
+                Tab(icon: Icon(Icons.safety_check),text: 'Home',),
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: [
+              HomeFragment(),
+              SearchFragment(),
+              SettingsFragment(),
+            ],
+          ),
+        )
     );
 
     /// Scaffold End
