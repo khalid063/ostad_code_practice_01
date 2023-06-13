@@ -84,7 +84,7 @@ class _HomeActivityState extends State<HomeActivity> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('My AppBar'),
+        title: Text('Home Screen'),
         titleSpacing: 0,
         toolbarHeight: 40,
 
@@ -101,7 +101,7 @@ class _HomeActivityState extends State<HomeActivity> {
       body: Center(
         child: ElevatedButton(onPressed: () {
           _myAlertDiolog(context);
-        }, child: Text("Click me"), style: elevButtonStyle),
+        }, child: Text("Click me 10 times"), style: elevButtonStyle),
       ),
     );
 
