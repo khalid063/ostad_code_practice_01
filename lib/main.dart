@@ -68,12 +68,10 @@ class _HomeActivityState extends State<HomeActivity> {
         child: Container(
           height: 10,
           width: 200,
-          child: Center(
-              child: LinearProgressIndicator(
-                minHeight: 2,
-                color: Colors.orange,
-                backgroundColor: Colors.greenAccent,
-              )
+          child: Icon(
+              Icons.camera,
+            color: Colors.deepOrange,
+            size: 50,
           ),
         ),
       )
