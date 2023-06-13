@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_pre_record_video_practice/Activity/Activity_three.dart';
+import 'package:ostad_pre_record_video_practice/Activity/activity_two.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,29 +45,29 @@ class _HomeActivityState extends State<HomeActivity> {
     );
   }
 
-  /// Alert Diolog massage
-  _myAlertDiolog(context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context){
-          return Expanded(
-              child: AlertDialog(
-                title: Text("Alart !"),
-                content: Text("Do you want to delete"),
-                actions: [
-                  TextButton(onPressed: (){
-                    _mySnackBar("Delete Succes", context);
-                    Navigator.of(context).pop();
-                  }, child: Text("Yes")),
-                  TextButton(onPressed: (){
-                    Navigator.of(context).pop();
-                  }, child: Text("No"))
-                ],
-              )
-          );
-        }
-    );
-  }
+  // /// Alert Diolog massage
+  // _myAlertDiolog(context) {
+  //   return showDialog(
+  //       context: context,
+  //       builder: (BuildContext context){
+  //         return Expanded(
+  //             child: AlertDialog(
+  //               title: Text("Alart !"),
+  //               content: Text("Do you want to delete"),
+  //               actions: [
+  //                 TextButton(onPressed: (){
+  //                   _mySnackBar("Delete Succes", context);
+  //                   Navigator.of(context).pop();
+  //                 }, child: Text("Yes")),
+  //                 TextButton(onPressed: (){
+  //                   Navigator.of(context).pop();
+  //                 }, child: Text("No"))
+  //               ],
+  //             )
+  //         );
+  //       }
+  //   );
+  // }
 
 
   /// Scaffold Start
@@ -85,23 +87,21 @@ class _HomeActivityState extends State<HomeActivity> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Screen'),
-        titleSpacing: 0,
-        toolbarHeight: 40,
-
-        /// Default height 60
-        toolbarOpacity: 0.9,
-        elevation: 30,
-        backgroundColor: Colors.deepPurple,
-        actions: [
-          IconButton(onPressed: () {
-            print("button 1 is clicked");
-          }, icon: Icon(Icons.comment)),
-        ],
+        centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(onPressed: () {
-          _myAlertDiolog(context);
-        }, child: Text("Click me 10 times"), style: elevButtonStyle),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityTwo()));
+            }, child: Text("Activity Two"), style: elevButtonStyle),
+            SizedBox(height: 10,),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityThree()));
+            }, child: Text("Activity Three"), style: elevButtonStyle),
+          ],
+        )
       ),
     );
 
