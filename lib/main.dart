@@ -44,21 +44,20 @@ class _HomeActivityState extends State<HomeActivity> {
         SnackBar(content: Text(message))
     );
   }
+  /// Button style start
+  final ButtonStyle elevButtonStyle = ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(10),
+      backgroundColor: Colors.greenAccent,
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10))
+      )
+  );
 
 
   /// Scaffold Start
   @override
   Widget build(BuildContext context) {
-
-    /// Button style start
-    final ButtonStyle elevButtonStyle = ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(10),
-        backgroundColor: Colors.greenAccent,
-        foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))
-        )
-    );
 
     return Scaffold(
       appBar: AppBar(
@@ -66,19 +65,18 @@ class _HomeActivityState extends State<HomeActivity> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityTwo("This data will go Second Aactivity")));
-            }, child: Text("Activity Two"), style: elevButtonStyle),
-            SizedBox(height: 10,),
-            ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityThree()));
-            }, child: Text("Activity Three"), style: elevButtonStyle),
-          ],
-        )
-      ),
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
+          color: Color.fromRGBO(7, 236, 176, 1),
+          shadowColor: Colors.deepOrange,
+          elevation: 50,
+          child: SizedBox(
+            height: 200,
+            width: 200,
+            child: Center(child: Text('This is Cart'),),
+          ),
+        ),
+      )
     );
 
     /// Scaffold End

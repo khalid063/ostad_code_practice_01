@@ -42,28 +42,8 @@ class ActivityTwo extends StatelessWidget {
         title: Text(msg),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ActivityThree()));
-              },
-              child: Text("Activity Three"),
-              style: elevButtonStyle),
-          SizedBox(
-            height: 10,
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeActivity()));
-              },
-              child: Text("Home Activity"),
-              style: elevButtonStyle),
-        ],
-      )),
+        child: Text("Home Page"),
+      )
     );
   }
 }
