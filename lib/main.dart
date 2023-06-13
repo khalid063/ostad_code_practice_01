@@ -65,15 +65,15 @@ class _HomeActivityState extends State<HomeActivity> {
         centerTitle: true,
       ),
       body: Center(
-        child: Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-          color: Color.fromRGBO(7, 236, 176, 1),
-          shadowColor: Colors.deepOrange,
-          elevation: 50,
-          child: SizedBox(
-            height: 200,
-            width: 200,
-            child: Center(child: Text('This is Cart'),),
+        child: Container(
+          height: 10,
+          width: 200,
+          child: Center(
+              child: LinearProgressIndicator(
+                minHeight: 2,
+                color: Colors.orange,
+                backgroundColor: Colors.greenAccent,
+              )
           ),
         ),
       )
