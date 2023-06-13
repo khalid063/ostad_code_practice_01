@@ -55,7 +55,7 @@ class _ActivityThreeState extends State<ActivityThree> {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ActivityTwo()));
+                        MaterialPageRoute(builder: (context) => ActivityTwo("Thsi is a massage from three activity")));
                   },
                   child: Text("Activity Two"),
                   style: elevButtonStyle),

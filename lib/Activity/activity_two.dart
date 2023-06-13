@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:ostad_pre_record_video_practice/Activity/Activity_three.dart';
 import 'package:ostad_pre_record_video_practice/main.dart';
 
-class ActivityTwo extends StatefulWidget {
-  const ActivityTwo({Key? key}) : super(key: key);
+class ActivityTwo extends StatelessWidget {
 
-  @override
-  State<ActivityTwo> createState() => _ActivityTwoState();
-}
+  String msg;
+  ActivityTwo(this.msg, {super.key});
 
-class _ActivityTwoState extends State<ActivityTwo> {
+  // String? msg;
+  // ActivityTwo(String myMassage, {super.key}){
+  //   this.msg = myMassage;
+  // }
+
+
+
+
+
 
   /// Snack bar massage
   _mySnackBar(message, context) {
@@ -33,7 +39,7 @@ class _ActivityTwoState extends State<ActivityTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Activity Two'),
+        title: Text(msg),
       ),
       body: Center(
           child: Column(

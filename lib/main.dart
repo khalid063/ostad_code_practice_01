@@ -45,30 +45,6 @@ class _HomeActivityState extends State<HomeActivity> {
     );
   }
 
-  // /// Alert Diolog massage
-  // _myAlertDiolog(context) {
-  //   return showDialog(
-  //       context: context,
-  //       builder: (BuildContext context){
-  //         return Expanded(
-  //             child: AlertDialog(
-  //               title: Text("Alart !"),
-  //               content: Text("Do you want to delete"),
-  //               actions: [
-  //                 TextButton(onPressed: (){
-  //                   _mySnackBar("Delete Succes", context);
-  //                   Navigator.of(context).pop();
-  //                 }, child: Text("Yes")),
-  //                 TextButton(onPressed: (){
-  //                   Navigator.of(context).pop();
-  //                 }, child: Text("No"))
-  //               ],
-  //             )
-  //         );
-  //       }
-  //   );
-  // }
-
 
   /// Scaffold Start
   @override
@@ -94,7 +70,7 @@ class _HomeActivityState extends State<HomeActivity> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityTwo()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityTwo("This data will go Second Aactivity")));
             }, child: Text("Activity Two"), style: elevButtonStyle),
             SizedBox(height: 10,),
             ElevatedButton(onPressed: () {
