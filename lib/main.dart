@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'Fragment/HomeFragment.dart';
-import 'Fragment/SearchFragment.dart';
-import 'Fragment/SettingsFragment.dart';
-
-
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -54,17 +47,17 @@ class _HomeActivityState extends State<HomeActivity> {
   _myAlertDiolog(context) {
     return showDialog(
         context: context,
-        builder: (BuildContext context) {
+        builder: (BuildContext context){
           return Expanded(
               child: AlertDialog(
                 title: Text("Alart !"),
                 content: Text("Do you want to delete"),
                 actions: [
-                  TextButton(onPressed: () {
+                  TextButton(onPressed: (){
                     _mySnackBar("Delete Succes", context);
                     Navigator.of(context).pop();
                   }, child: Text("Yes")),
-                  TextButton(onPressed: () {
+                  TextButton(onPressed: (){
                     Navigator.of(context).pop();
                   }, child: Text("No"))
                 ],
@@ -74,12 +67,12 @@ class _HomeActivityState extends State<HomeActivity> {
     );
   }
 
-  
+
   /// Scaffold Start
   @override
   Widget build(BuildContext context) {
 
-    /// Button style 1 start
+    /// Button style start
     final ButtonStyle elevButtonStyle = ElevatedButton.styleFrom(
         padding: EdgeInsets.all(10),
         backgroundColor: Colors.greenAccent,
@@ -89,16 +82,26 @@ class _HomeActivityState extends State<HomeActivity> {
         )
     );
 
-    /// Button style 2
-    ButtonStyle elevButtonStyle2 = ElevatedButton.styleFrom(
-        minimumSize: Size(double.infinity, 60)
-    );
-
-    /// Scaffold Start
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Activity'),
-        centerTitle: true,
+        title: Text('My AppBar'),
+        titleSpacing: 0,
+        toolbarHeight: 40,
+
+        /// Default height 60
+        toolbarOpacity: 0.9,
+        elevation: 30,
+        backgroundColor: Colors.deepPurple,
+        actions: [
+          IconButton(onPressed: () {
+            print("button 1 is clicked");
+          }, icon: Icon(Icons.comment)),
+        ],
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: () {
+          _myAlertDiolog(context);
+        }, child: Text("Click me"), style: elevButtonStyle),
       ),
     );
 
