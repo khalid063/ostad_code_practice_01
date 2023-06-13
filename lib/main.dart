@@ -74,14 +74,12 @@ class _HomeActivityState extends State<HomeActivity> {
     );
   }
 
-
-
-
+  
   /// Scaffold Start
   @override
   Widget build(BuildContext context) {
 
-    /// Button style start
+    /// Button style 1 start
     final ButtonStyle elevButtonStyle = ElevatedButton.styleFrom(
         padding: EdgeInsets.all(10),
         backgroundColor: Colors.greenAccent,
@@ -97,35 +95,11 @@ class _HomeActivityState extends State<HomeActivity> {
     );
 
     /// Scaffold Start
-    return DefaultTabController(
-        length: 10,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('My App'),
-            bottom: TabBar(
-              isScrollable: true,
-              tabs: [
-                Tab(icon: Icon(Icons.home),text: 'Home',),
-                Tab(icon: Icon(Icons.search),text: 'search',),
-                Tab(icon: Icon(Icons.settings),text: 'settings',),
-                Tab(icon: Icon(Icons.email),text: 'Home',),
-                Tab(icon: Icon(Icons.contact_mail_outlined),text: 'Home',),
-                Tab(icon: Icon(Icons.person),text: 'Home',),
-                Tab(icon: Icon(Icons.favorite),text: 'Home',),
-                Tab(icon: Icon(Icons.cabin),text: 'Home',),
-                Tab(icon: Icon(Icons.safety_check),text: 'Home',),
-                Tab(icon: Icon(Icons.safety_check),text: 'Home',),
-              ],
-            ),
-          ),
-          body: TabBarView(
-            children: [
-              HomeFragment(),
-              SearchFragment(),
-              SettingsFragment(),
-            ],
-          ),
-        )
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home Activity'),
+        centerTitle: true,
+      ),
     );
 
     /// Scaffold End
